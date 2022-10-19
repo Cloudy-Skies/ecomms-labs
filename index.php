@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+
+<h1>Ecomms Labs</h1>
+<p>Setting up the register page</p>
 <a href="/Login/register.php"><button>Register</button></a>    
 </body>
 </html>
