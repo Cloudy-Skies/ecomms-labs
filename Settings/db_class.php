@@ -1,7 +1,9 @@
 <?php
 //database credentials
 require('db_cred.php');
-
+/**
+ * @author David Sampah
+ */
 class db_connection{
     //properties
     public $db = null;
