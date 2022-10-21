@@ -3,6 +3,8 @@ require('../Settings/db_class.php');
 
 class CustomerClass extends db_connection
 {
+    private customerClass;
+    
     
     //add function
     public function addCustomer_cls($cname,$cemail,$cpass,$ccountry,$ccity,$cnum)
