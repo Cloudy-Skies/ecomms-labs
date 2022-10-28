@@ -38,5 +38,57 @@ class db_connection{
 			return true;
 		}
     }
+
+    	//fetch a data
+	/**
+	*get select data
+	*@return a record
+	**/
+	function db_fetch_one($sql){
+		
+		// if executing query returns false
+		if(!$this->db_query($sql)){
+			return false;
+		} 
+		//return a record
+		return mysqli_fetch_assoc($this->results);
+	}
+
+	//fetch all data
+	/**
+	*get select data
+	*@return all record
+	**/
+	function db_fetch_all($sql){
+		
+		// if executing query returns false
+		if(!$this->db_query($sql)){
+			return false;
+		} 
+		//return all record
+		return mysqli_fetch_all($this->results, MYSQLI_ASSOC);
+	}
+
+
+	//count data
+	/**
+	*get select data
+	*@return a count
+	**/
+	function db_count(){
+		
+		//check if result was set
+		if ($this->results == null) {
+			return false;
+		}
+		elseif ($this->results == false) {
+			return false;
+		}
+		
+		//return a record
+		return mysqli_num_rows($this->results);
+
+	}
+
 }
 ?>
