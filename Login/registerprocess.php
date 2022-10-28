@@ -13,7 +13,13 @@ if (ISSET($_POST['addSubmit'])) {
     $image=$_POST['image'];
 
     echo $name;
+    echo $email;
+    echo $password;
+    echo $country;
+    echo $city;
+    echo $number;
+    echo $email;
 
-    addCustomer_ctr($name,$email,$password,$country,$city,$number,$image);
+    //addCustomer_ctr($name,$email,$password,$country,$city,$number,$image);
 }
 ?>
