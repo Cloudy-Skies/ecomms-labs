@@ -46,6 +46,14 @@
                             <textarea name="cnumber" class="form-control <?php echo (!empty($cnumber_err)) ? 'is-invalid' : ''; ?>"><?php echo $cnumber; ?></textarea>
                             <span class="invalid-feedback"><?php echo $cnumber_err;?></span>
                         </div>
+                        <div class="form-group">
+                            <label>image</label>
+                            <input name="image" class="form-control" type="file"
+                            accept="image/*">
+                            <span class="invalid-feedback"></span>
+                        </div>
+
+        
 
 
 
@@ -53,7 +61,7 @@
 
 
 
-                        <input type="submit" class="btn btn-primary" value="Submit">
+                        <input type="submit" class="btn btn-primary" value="Submit" name="addSubmit">
                         <a href="index.php" class="btn btn-secondary ml-2">Cancel</a>
                     </form>
                 </div>
