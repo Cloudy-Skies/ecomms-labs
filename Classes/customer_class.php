@@ -45,5 +45,3 @@ class CustomerClass extends db_connection
     }
 
 }
-
-?>
