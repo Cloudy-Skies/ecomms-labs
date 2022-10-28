@@ -17,7 +17,8 @@ class CustomerClass extends db_connection
         ('customer_name','customer_email','customer_pass',
         'customer_country','customer_city','customer_contact',
         'customer_image','user_role') 
-        VALUES ('$cname,$cemail,$cpass,$ccountry,$ccity,$cnum,$cimage',$user_role)";
+        VALUES 
+        ('$cname,$cemail,$cpass,$ccountry,$ccity,$cnum,$cimage',$user_role)";
 
         return $this->db_query($sql);
     }
