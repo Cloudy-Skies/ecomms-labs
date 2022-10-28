@@ -33,10 +33,10 @@ class CustomerClass extends db_connection
         # code...
     }
 
-    function selCustomer($email)
+    function selectCustomerEmail_cls($email)
     {
         $sql = "SELECT * from customer where 'customer_email'=$email";
-        return $this->db_fetch_all($sql);
+        return $this->db_fetch_one($sql);
     }
 
     function selAllCustomer(){
