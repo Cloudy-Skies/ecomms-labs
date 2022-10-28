@@ -12,5 +12,21 @@
     <p>Setting up the register page</p>
     <a href="Login/register.php"><button>Register</button></a>
     <a href="Login/login.php"><button>Login</button></a>    
+
+
+    <?php
+
+    session_start();
+    if (isset($_SESSION["loggedin"]) &&$_SESSION["loggedin"]===true) {
+        echo '<a href="Login\logout.php">Logout</a>';
+    }
+    else {
+        if (isset($_SESSION["loggedin"]) &&$_SESSION["loggedin"]===true) {
+            echo '<a href="Login\login.php">Login</a>';
+        }
+    
+    }
+    
+    ?>
 </body>
 </html>

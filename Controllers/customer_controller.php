@@ -22,6 +22,15 @@ function selCustomerEmail_ctr($var1){
 
 }
 
+function selCustomerPassword_ctr($var1){
+    $select_customer_password = new CustomerClass();
+
+    $selectpassword= $select_customer_password->selectCustomerPassword_cls($var1);
+    //var_dump($selectpassword);
+
+}
+
+
 //TODO:
 function get_all_customer_ctr()
 {

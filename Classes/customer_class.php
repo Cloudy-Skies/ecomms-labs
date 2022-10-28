@@ -39,6 +39,13 @@ class CustomerClass extends db_connection
         return $this->db_fetch_one($sql);
     }
 
+    function selectCustomerPassword_cls($email){
+        $sql = "SELECT customer_pass from customer where 'customer_email'=$email ";
+        //var_dump($this->db_fetch_one($sql));
+        return $this->db_fetch_one($sql);
+    
+    }
+
     function selAllCustomer(){
         $sql = "SELECT * from customer";
         return $this->db_fetch_all($sql);
