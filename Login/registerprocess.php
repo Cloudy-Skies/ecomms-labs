@@ -1,6 +1,6 @@
 <?php
 
-include"../Controllers/customer_controller.php";
+include "../Controllers/customer_controller.php";
 
 if (ISSET($_POST['addSubmit'])) {
     $name=$_POST['name'];
@@ -19,7 +19,7 @@ if (ISSET($_POST['addSubmit'])) {
     // echo $city;
     // echo $number;
     // echo $email;
-
-    addCustomer_ctr($name,$email,$password,$country,$city,$number,$image);
+    //addCustomer_ctr($name,$email,$password,$country,$city,$number,$image);
+    var_dump(addCustomer_ctr($name,$email,$password,$country,$city,$number,$image));
 }
 ?>

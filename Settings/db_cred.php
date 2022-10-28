@@ -5,4 +5,9 @@ define('HOSTNAME', 'b1ecbef9f5bea1');
 define('PASSWORD', '6609bca5');
 define('DATABASE','heroku_67ace1309e9dc31');
 
+// define('SERVERNAME','localhost');
+// define('HOSTNAME', 'root');
+// define('PASSWORD', '');
+// define('DATABASE','shoppn');
+
 ?>

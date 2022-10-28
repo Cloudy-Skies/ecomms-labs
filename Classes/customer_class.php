@@ -1,9 +1,8 @@
 <?php
-require('../Settings/db_class.php');
+require ('../Settings/db_class.php');
 
 class CustomerClass extends db_connection
 {
-    
     
     
     //add function
@@ -11,14 +10,13 @@ class CustomerClass extends db_connection
     public function addCustomer_cls($cname,$cemail,$cpass,$ccountry,$ccity,$cnum,$cimage)
     {
         //new user has user role2
-        $user_role=2;
+        $user_role='2';
 
-        $sql = "INSERT INTO customer 
-        ('customer_name','customer_email','customer_pass',
-        'customer_country','customer_city','customer_contact',
-        'customer_image','user_role') 
+        $sql = "INSERT INTO customer(customer_name,customer_email,customer_pass,
+        customer_country,customer_city,customer_contact,
+        customer_image,user_role) 
         VALUES 
-        ('$cname,$cemail,$cpass,$ccountry,$ccity,$cnum,$cimage',$user_role)";
+        ('$cname','$cemail','$cpass','$ccountry','$ccity','$cnum','$cimage',$user_role)";
 
         return $this->db_query($sql);
     }

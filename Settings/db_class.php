@@ -16,6 +16,7 @@ class db_connection{
         if(mysqli_connect_errno()){
             return false;
         }else {
+			//print "connected";
             return true;
         }
     }
@@ -35,7 +36,8 @@ class db_connection{
 		if ($this->results == false) {
 			return false;
 		}else{
-			return true;
+			//print_r($this->results);
+			return $this->results;
 		}
     }
 

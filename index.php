@@ -10,7 +10,7 @@
 <body>
     <h1>Ecomms Labs</h1>
     <p>Setting up the register page</p>
-    <a href="/Login/register.php"><button>Register</button></a>
-    <a href="/Login/login.php"><button>Login</button></a>    
+    <a href="Login/register.php"><button>Register</button></a>
+    <a href="Login/login.php"><button>Login</button></a>    
 </body>
 </html>
