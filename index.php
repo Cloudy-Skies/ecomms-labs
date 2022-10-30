@@ -18,10 +18,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="./login/register.php">Register </a>
+                <a class="nav-link" href="./Login/register.php">Register </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="./login/login.php">LogIn </a>
+                <a class="nav-link" href="./Login/ogin.php">LogIn </a>
             </li>
 
             <?php
