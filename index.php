@@ -21,7 +21,7 @@
                 <a class="nav-link" href="./Login/register.php">Register </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="./Login/ogin.php">LogIn </a>
+                <a class="nav-link" href="./Login/login.php">LogIn </a>
             </li>
 
             <?php
