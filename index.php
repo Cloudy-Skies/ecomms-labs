@@ -18,7 +18,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="./Login/register.php">Register </a>
+                <a class="nav-link" href="Login/register.php">Register </a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="Login/login.php">LogIn </a>
@@ -28,8 +28,8 @@
                 require 'Settings/core.php';
 
                 // put this in a function in core.php (login_menu())
-                login_menu('./login/login.php', '#');
-                brand_menu_item('./admin/Brand.php');
+                login_menu('Login/login.php', '#');
+                brand_menu_item('Admin/Brand.php');
             ?>
               
             </ul>
