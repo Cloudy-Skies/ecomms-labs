@@ -24,12 +24,12 @@
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <textarea name="password" class="form-control" placeholder="Enter password..." required></textarea>
+                            <textarea name="password" class="form-control" type="password" placeholder="Enter password..." required></textarea>
                             <span class="invalid-feedback"></span>
                         </div>
 
                         //submit buttons
-                        <input type="submit" class="btn btn-primary" value="Submit" name="addLogin">
+                        <input type="submit" class="btn btn-primary" value="Submit" name="login">
                         <a href="../index.php" class="btn btn-secondary ml-2">Cancel</a>
                     </form>
                 </div>
