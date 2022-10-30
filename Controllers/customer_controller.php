@@ -4,28 +4,28 @@ require ('../Classes/customer_class.php');
 //edit,select,update, delete function
 
 //takes 7 vars
-function addCustomer_ctr($var1,$var2,$var3,$var4,$var5,$var6,$var7){
+function addCustomer_ctr($name,$email,$password,$country,$city,$contact,$role){
     $add_customer = new CustomerClass();
 
-    $add_customer-> addCustomer_cls($var1,$var2,$var3,$var4,$var5,$var6,$var7);
+    $add_customer-> addCustomer_cls($name,$email,$password,$country,$city,$contact,$role);
     return $add_customer;
 }
 
 /**
  * @var $var1 is the customer email to be checked
  */
-function selCustomerEmail_ctr($var1){
+function selCustomerEmail_ctr($email){
     $select_customer_email = new CustomerClass();
 
-    $select_customer_email->selectCustomerEmail_cls($var1);
+    $select_customer_email->selectCustomerEmail_cls($email);
     return $select_customer_email;
 
 }
 
-function selCustomerPassword_ctr($var1){
+function selCustomerPassword_ctr($password){
     $select_customer_password = new CustomerClass();
 
-    $selectpassword= $select_customer_password->selectCustomerPassword_cls($var1);
+    $selectpassword= $select_customer_password->selectCustomerPassword_cls($password);
     //var_dump($selectpassword);
 
 }
