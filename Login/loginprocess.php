@@ -4,7 +4,7 @@
 // 
 include "../Controllers/customer_controller.php";
 
-if (ISSET($_POST['addLogin'])) {
+if (ISSET($_POST['login'])) {
     $email=$_POST['email'];
     $password=$_POST['password'];
     // echo $name;
