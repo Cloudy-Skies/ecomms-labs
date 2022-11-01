@@ -4,21 +4,21 @@ require ('../Classes/customer_class.php');
 //edit,select,update, delete function
 
 //takes 7 vars
-function addCustomer_ctr($name,$email,$password,$country,$city,$contact,$role){
+function add_customer_controller($name,$email,$password,$country,$city,$contact,$role){
     $add_customer = new CustomerClass();
 
-    $add_customer-> addCustomer_cls($name,$email,$password,$country,$city,$contact,$role);
+    $add_customer-> add_customer_cls($name,$email,$password,$country,$city,$contact,$role);
     return $add_customer;
 }
 
 /**
  * @var $var1 is the customer email to be checked
  */
-function selCustomerEmail_ctr($email){
-    $select_customer_email = new CustomerClass();
+function select_one_customer_controller($email){
+    $select_one_customer = new CustomerClass();
 
-    $select_customer_email->selectCustomerEmail_cls($email);
-    return $select_customer_email;
+    $select_one_customer->select_one_customer_cls($email);
+    return $select_one_customer;
 
 }
 
@@ -38,8 +38,9 @@ function get_all_customer_ctr()
 }
 
 //TODO:
-function edit_customer_ctr()
+function edit_customer_controller($id,$name,$email,$password,$country,$city,$contact,$role)
 {
-    # code...
+    $customer_instance = new CustomerClass();
+    return $customer_instance->edit_customer_cls($id,$name,$email,$password,$country,$city,$contact,$role);
 }
 ?>

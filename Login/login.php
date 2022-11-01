@@ -28,7 +28,7 @@
                             <span class="invalid-feedback"></span>
                         </div>
 
-                        //submit buttons
+                        <!-- Submit buttons -->
                         <input type="submit" class="btn btn-primary" value="Submit" name="login">
                         <a href="../index.php" class="btn btn-secondary ml-2">Cancel</a>
                     </form>

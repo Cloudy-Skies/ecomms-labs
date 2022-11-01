@@ -20,6 +20,6 @@ if (ISSET($_POST['addSubmit'])) {
     // echo $number;
     // echo $email;
     //addCustomer_ctr($name,$email,$password,$country,$city,$number,$image);
-    var_dump(addCustomer_ctr($name,$email,$password,$country,$city,$number,$image));
+    var_dump(add_customer_controller($name,$email,$password,$country,$city,$number,$image));
 }
 ?>
