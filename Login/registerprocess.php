@@ -9,7 +9,7 @@ if (ISSET($_POST['addSubmit'])) {
     $country=$_POST['country'];
     $city=$_POST['city'];
     $number=$_POST['cnumber'];
-    $email=$_POST['email'];
+    // $email=$_POST['email'];
     $image=$_POST['image'];
 
     // echo $name;
