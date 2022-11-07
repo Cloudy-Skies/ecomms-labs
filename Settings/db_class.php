@@ -31,13 +31,13 @@ class db_connection{
 		}
 
         //run 
-        $this->results = mysqli_query($this->db,$query);
+        $this->result = mysqli_query($this->db,$query);
 		
-		if ($this->results == false) {
+		if ($this->result == false) {
 			return false;
 		}else{
-			//print_r($this->results);
-			return $this->results;
+			//print_r($this->result);
+			return $this->result;
 		}
     }
 
@@ -53,7 +53,7 @@ class db_connection{
 			return false;
 		} 
 		//return a record
-		return mysqli_fetch_assoc($this->results);
+		return mysqli_fetch_assoc($this->result);
 	}
 
 	//fetch all data
@@ -68,7 +68,7 @@ class db_connection{
 			return false;
 		} 
 		//return all record
-		return mysqli_fetch_all($this->results, MYSQLI_ASSOC);
+		return mysqli_fetch_all($this->result, MYSQLI_ASSOC);
 	}
 
 
@@ -80,17 +80,16 @@ class db_connection{
 	function db_count(){
 		
 		//check if result was set
-		if ($this->results == null) {
+		if ($this->result == null) {
 			return false;
 		}
-		elseif ($this->results == false) {
+		elseif ($this->result == false) {
 			return false;
 		}
 		
 		//return a record
-		return mysqli_num_rows($this->results);
+		return mysqli_num_rows($this->result);
 
 	}
 
 }
-?>
