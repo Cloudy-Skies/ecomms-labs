@@ -17,8 +17,8 @@ function add_customer_controller($name,$email,$password,$country,$city,$contact,
 function select_one_customer_controller($email){
     $select_one_customer = new CustomerClass();
 
-    $select_one_customer->select_one_customer_cls($email);
-    return $select_one_customer;
+    return $select_one_customer->select_one_customer_cls($email);
+    // return $;
 
 }
 
