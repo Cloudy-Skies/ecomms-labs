@@ -92,5 +92,5 @@
 
 
     }
-    
+    $new = new ProductClass();
 ?>
