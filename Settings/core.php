@@ -76,3 +76,46 @@ function brand_menu_item($path){
 	}
 }
 
+function category_menu_item($path){
+	if(check_permission() == 1){
+		echo "
+		<li class='nav-item'>
+			<a class='nav-link' href='${path}'>Category</a>
+		</li> 
+		";
+	}
+}
+
+function add_product_menu_item($path){
+	if(isset($_SESSION['customer_id'])){
+		echo "
+			<li class='nav-item'>
+				<a class='nav-link' href='${path}'>Product</a>
+			</li> 
+		";
+	}
+}
+
+
+// Check if brand has been added to database
+function brand_added(){
+	if (isset($_SESSION['brand_added'])){
+		if ($_SESSION['brand_added'] == true){
+			echo '
+				<script>
+					alert("Brand successfully added")
+				</script>
+			';
+		}
+		else{
+			echo '
+			<script>
+				alert("Brand not added")
+			</script>
+			';
+		}
+	}
+	unset($_SESSION['brand_added']);
+}
+?>
+
