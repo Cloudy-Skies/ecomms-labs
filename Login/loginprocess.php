@@ -7,15 +7,6 @@ include "../Controllers/customer_controller.php";
 if (ISSET($_POST['login'])) {
     $email=$_POST['email'];
     $password=$_POST['password'];
-    // echo $name;
-    // echo $email;
-    // echo $password;
-    // echo $country;
-    // echo $city;
-    // echo $number;
-    // echo $email;
-    //addCustomer_ctr($name,$email,$password,$country,$city,$number,$image);
-    // var_dump(addCustomer_ctr($name,$email,$password,$country,$city,$number,$image));
 
 
     $data = select_one_customer_controller($email);
@@ -24,6 +15,8 @@ if (ISSET($_POST['login'])) {
         echo 'email does not exist';
         header('Location: ../login.php');
     }else{
+        // $hash = $data['customer pass'];
+        $data = json_decode(json_encode($data),true);
         $hash = $data['customer_pass'];
         $authenticated = password_verify($password, $hash);
     

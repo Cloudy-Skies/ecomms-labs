@@ -5,15 +5,11 @@ require ('../Classes/customer_class.php');
 
 //takes 7 vars
 function add_customer_controller($name,$email,$password,$country,$city,$contact,$role){
-    $add_customer = new CustomerClass();
-
-    $add_customer-> add_customer_cls($name,$email,$password,$country,$city,$contact,$role);
-    return $add_customer;
+    $customer_instance = new CustomerClass();
+    return $customer_instance->add_customer_cls($name, $email, $password, $country, $city, $contact, $role);
 }
 
-/**
- * @var $var1 is the customer email to be checked
- */
+
 function select_one_customer_controller($email){
     $select_one_customer = new CustomerClass();
 
