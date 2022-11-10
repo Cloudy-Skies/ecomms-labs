@@ -4,41 +4,41 @@
 // 
 include "../Controllers/customer_controller.php";
 
-if (ISSET($_POST['login'])) {
-    $email=$_POST['email'];
-    $password=$_POST['password'];
-    // echo $name;
-    // echo $email;
-    // echo $password;
-    // echo $country;
-    // echo $city;
-    // echo $number;
-    // echo $email;
-    //addCustomer_ctr($name,$email,$password,$country,$city,$number,$image);
-    // var_dump(addCustomer_ctr($name,$email,$password,$country,$city,$number,$image));
+if (isset($_POST['login'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
+    echo 'testing';
+    echo "<br>";
 
+    //echo $email,$password;
     $data = select_one_customer_controller($email);
-    if (!$data){
-        $_SESSION['email_password_set'] = true; 
-        echo 'email does not exist';
+    // var_dump($data);
+
+    if (!$data) {
+        $_SESSION['email_password_set'] = true;
+        //echo 'email does not exist';
         header('Location: ../login.php');
-    }else{
+    } else {
+        // $hash = $data['customer pass'];
+        // $data = json_decode(json_encode($data),true);
         $hash = $data['customer_pass'];
         $authenticated = password_verify($password, $hash);
-    
-        if($authenticated ){
+
+        //echo $hash;
+
+        if ($authenticated) {
             $_SESSION['customer_id'] = $data['customer_id'];
             $_SESSION['customer_email'] = $data['customer_email'];
             $_SESSION['user_role'] = $data['user_role'];
             header('Location: ../index.php');
-        }else{
-            $_SESSION['email_password_set'] = true; 
-            echo 'email does not exist';
-            header('Location: ./login.php');
+        } else {
+            $_SESSION['email_password_set'] = true;
+            //echo 'email does not exist';
+            header('Location: login.php');
         }
     }
-   
+
     //checking email
     // $email_check=select_one_customer_controller($email);
     // $password_check=selCustomerPassword_ctr($email);
@@ -64,11 +64,8 @@ if (ISSET($_POST['login'])) {
     //     $password_check;
     // }
 
-    
+
 
     // $password_check=selCustomerPassword_ctr($password);
 
 }
-
-
-?>

@@ -23,6 +23,15 @@
             <li class="nav-item active">
                 <a class="nav-link" href="Login/login.php">LogIn </a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="View/cart.php">Cart </a>
+            </li>
+            <?php
+            // if (SESSION) {
+            //     # code...
+            // }
+            ?>
+            
 
             <?php
                 require 'Settings/core.php';
