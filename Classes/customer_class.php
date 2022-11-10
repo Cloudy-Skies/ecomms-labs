@@ -22,7 +22,9 @@ class CustomerClass extends db_connection
     //TODO
     function edit_customer_cls($id, $name, $email, $country, $city, $contact)
     {
-        $sql = "UPDATE customer set customer_name=$name,customer_email=$email,customer_country=$country,customer_city=$city,customer_contact=$contact WHERE id = $id";
+        $sql = "UPDATE customer 
+        set customer_name=$name,customer_email=$email,customer_country=$country,
+        customer_city=$city,customer_contact=$contact WHERE id = $id";
         return $this->query($sql);
     }
 
@@ -35,13 +37,14 @@ class CustomerClass extends db_connection
 
     function select_one_customer_cls($email)
     {
-        $sql = "SELECT * from customer where customer_email=$email";
+        $sql = "SELECT * from customer where customer_email='$email'";
         return $this->fetchOne($sql);
+        //return $sql;
     }
 
     function selectCustomerPassword_cls($email)
     {
-        $sql = "SELECT customer_pass from customer where 'customer_email'=$email ";
+        $sql = "SELECT customer_pass from customer where 'customer_email'='$email'";
         //var_dump($this->db_fetch_one($sql));
         return $this->fetchOne($sql);
     }
