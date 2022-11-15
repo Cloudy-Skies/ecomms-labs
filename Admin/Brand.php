@@ -28,14 +28,14 @@ $brands = select_all_brands_controller()
                 <div class="col-md-12">
                     <h2 class="mt-5">Create Record</h2>
                     <p>Please enter a new brand name here.</p>
-                    <form>
+                    <form method="POST" action="../Actions/add_brand.php">
                         <div class="form-group">
                             <label>Brand</label>
-                            <textarea name="brand" class="form-control" placeholder="Enter brand..." required></textarea>
+                            <input name="brand" class="form-control" placeholder="Enter brand..." required></textarea>
                             <span class="invalid-feedback"></span>
                         </div>
 
-                        //submit buttons
+                        <!-- //submit buttons -->
                         <input type="submit" class="btn btn-primary" value="Submit" name="addBrand" onclick="addNewBrand()">
                         <a href="../index.php" class="btn btn-secondary ml-2">Cancel</a>
                     </form>
