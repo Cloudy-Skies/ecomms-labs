@@ -1,7 +1,7 @@
 <?php
 require('../Settings/db_class.php');
 
-class CustomerClass extends db_connection
+class customer_class extends db_connection
 {
     //add function
     //expects 7
@@ -14,8 +14,9 @@ class CustomerClass extends db_connection
         customer_country,customer_city,customer_contact,
         customer_image,user_role) 
         VALUES 
-        ('$name','$email','$pass','$country','$city','$contact','$image',$user_role)";
-
+        ('$name','$email','$pass','$country','$city',
+        '$contact','$image','$user_role')";
+        // print $sql;
         return $this->query($sql);
     }
 

@@ -1,7 +1,7 @@
 <?php
 // require ("../Classes/cart_class.php")
 
-require_once("/../Classes/cart_class.php");
+require_once("../Classes/cart_class.php");
 //require_once("././classes/cartclass.php");
 /*
 *cart controller to handle everything about the cart

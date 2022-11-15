@@ -9,7 +9,7 @@ if (check_permission()!=1) {
     header('Location: ../index.php');
 }
 
-$brands = select_all_brands_controller()
+$category = select_all_categories_ctr();
 
 ?>
 
@@ -27,24 +27,24 @@ $brands = select_all_brands_controller()
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="mt-5">Create Record</h2>
-                    <p>Please enter a new brand name here.</p>
-                    <form method="POST" action="../Actions/add_brand.php">
+                    <p>Please enter a new category name here.</p>
+                    <form method="POST" action="../Actions/add_category.php">
                         <div class="form-group">
-                            <label>Brand</label>
-                            <input name="brand" class="form-control" placeholder="Enter brand..." required></textarea>
+                            <label>Category</label>
+                            <input name="category" class="form-control" placeholder="Enter category..." required>
                             <span class="invalid-feedback"></span>
                         </div>
 
                         <!-- //submit buttons -->
-                        <input type="submit" class="btn btn-primary" value="Submit" name="addBrand" onclick="addNewBrand()">
+                        <input type="submit" class="btn btn-primary" value="Submit" name="addCategory" onclick="addNewBrand()">
                         <a href="../index.php" class="btn btn-secondary ml-2">Cancel</a>
                     </form>
 
                     <table>
                         <thead>
                             <tr>
-                                <th>Brand ID</th>
-                                <th>Brand Name</th>
+                                <th>Category ID</th>
+                                <th>Category Name</th>
                                 <th></th>
                                 <th></th>
                             </tr>
@@ -52,15 +52,15 @@ $brands = select_all_brands_controller()
 
                         <tbody>
                             <?php
-                            foreach($brands as $brand){
+                            foreach($category as $row){
                                 echo 
                                 "
                                 <tr>
-                                    <td>{$brand['brand_id']}</td>
-                                    <td>{$brand['brand_name']}</td>
+                                    <td>{$row['cat_id']}</td>
+                                    <td>{$row['cat_name']}</td>
                             
                                     <td>
-                                        <a href='updateBrand.php?brand_id={$brand['brand_id']}'>
+                                        <a href='updateCategory.php?category_id={$row['cat_id']}'>
                                             <i class='fa fa-pencil-square-o' aria-hidden='true'></i>
                                         </a>
                                     </td>
@@ -75,20 +75,7 @@ $brands = select_all_brands_controller()
                     </table>
                     <a href="../index.php" class="btn btn-secondary ml-2">Go Back</a>
 
-                    <script>
-                        function addNewBrand() 
-                        {
-                        $.post("../actions/add_brand.php", {
-                                addBrand: "1", 
-                                brand: document.getElementById("brand").value, 
-                                }, function(data){
-                                    console.log('added!')
-                                    alert("Product has been added!");
-                                    $('.table').load("Brand.php .table")
-                                    //location.reload();
-                                });
-                        }
-                    </script>
+            
 
 
                 </div>

@@ -2,13 +2,13 @@
     require'../Controllers/product_controller.php';
     require '../Settings/core.php';
     //case if admin is adding a brand
-    if (isset($_POST['addBrand'])) {
-        $brand = $_POST['brand'];
+    if (isset($_POST['addCategory'])) {
+        $category = $_POST['category'];
 
-        $out = add_product_brand_ctr($brand);
+        $out = add_product_category_ctr($category);
         //var_dump($out);
         if ($out) {
-            header('Location: ../Admin/Brand.php');
+            header('Location: ../Admin/category.php');
            // echo "yes";
         }else {
             #print error
