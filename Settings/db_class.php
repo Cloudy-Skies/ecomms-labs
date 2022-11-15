@@ -38,8 +38,8 @@ class db_connection
 		if ($this->result == false) {
 			return false;
 		} else {
-			//print_r($this->results);
-			return true;
+			return ($this->result);
+			//return true;
 		}
 	}
 
