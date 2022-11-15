@@ -1,71 +1,50 @@
 <?php
-//     $pword = $_POST['customer_pass'];
-//     $email = $_POST['customer_email'];
-// 
-include "../Controllers/customer_controller.php";
 
+include "../Controllers/customer_controller.php";
+include "../Settings/core.php";
+
+// Taking data from form
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    echo 'testing';
-    echo "<br>";
+    // echo 'testing';
+    // echo "<br>";
 
-    //echo $email,$password;
+    // retrieving customer from database
     $data = select_one_customer_controller($email);
     // var_dump($data);
 
+    //Redirect to login if user does not exist in db
     if (!$data) {
         $_SESSION['email_password_set'] = true;
         //echo 'email does not exist';
-        header('Location: ../login.php');
-    } else {
-        // $hash = $data['customer pass'];
-        // $data = json_decode(json_encode($data),true);
+        header('Location: login.php');
+    } 
+    else {
+
         $hash = $data['customer_pass'];
+        //bool to check if password and password hash match
         $authenticated = password_verify($password, $hash);
 
-        //echo $hash;
 
+        //stores session data if password and password hash are equal: 
         if ($authenticated) {
+            $_SESSION['loggedIn']=true;
             $_SESSION['customer_id'] = $data['customer_id'];
             $_SESSION['customer_email'] = $data['customer_email'];
             $_SESSION['user_role'] = $data['user_role'];
+            //redirect to index
             header('Location: ../index.php');
-        } else {
+        }
+        //redirects to login if pwd and pwd hash are unequal 
+        else {
             $_SESSION['email_password_set'] = true;
             //echo 'email does not exist';
             header('Location: login.php');
         }
     }
 
-    //checking email
-    // $email_check=select_one_customer_controller($email);
-    // $password_check=selCustomerPassword_ctr($email);
-    // if (empty($email_check)) {
-    //     echo 'No email detected';
-    // }
-    // elseif (password_verify($password,$password_check['customer_pass'])) {
-    //     if ($email_check['user_role']==2) {
 
-    //         session_start();
-
-    //         $_SESSION["loggedin"]=true;
-    //         $_SESSION["customer_id"]=$email_check['customer_id'];
-    //         $_SESSION["user_role"]=$email_check['user_role'];
-    //     }
-
-    //     //admin section
-    // }
-    // else {
-    //     echo 'Email or password is wrong';
-    //     echo $password;
-    //     //var_dump( $password_check);
-    //     $password_check;
-    // }
-
-
-
-    // $password_check=selCustomerPassword_ctr($password);
 
 }

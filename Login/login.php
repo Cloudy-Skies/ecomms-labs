@@ -10,27 +10,34 @@
 </head>
 
 <body>
+
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="mt-5">Create Record</h2>
-                    <p>Please fill this form and submit to add Customer record to the database.</p>
+                    <h2 class="mt-5">Customer Login</h2>
+                    <p>Please fill this form and submit to Login to the application.</p>
+                    <!-- Login Form -->
                     <form action="loginprocess.php" method="POST">
+
+                        <!-- Email field -->
                         <div class="form-group">
                             <label>Email</label>
-                            <textarea name="email" class="form-control" placeholder="Enter email..." required></textarea>
-                            <span class="invalid-feedback"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <textarea name="password" class="form-control" type="password" placeholder="Enter password..." required></textarea>
+                            <input name="email" class="form-control" placeholder="Enter email..." required></textarea>
                             <span class="invalid-feedback"></span>
                         </div>
 
-                        <!-- Submit buttons -->
+                        <!-- Password field -->
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input name="password" class="form-control" type="password" placeholder="Enter password..." required></textarea>
+                            <span class="invalid-feedback"></span>
+                        </div>
+
+                        <!-- Submit & cancel buttons -->
                         <input type="submit" class="btn btn-primary" value="Submit" name="login">
-                        <a href="../index.php" class="btn btn-secondary ml-2">Cancel</a>
+                        <!-- Redirects to register page -->
+                        <a href="register.php" class="btn btn-secondary ml-2">Cancel</a>
                     </form>
                 </div>
             </div>
